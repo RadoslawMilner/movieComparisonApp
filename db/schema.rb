@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_10_142510) do
-  create_table "comparisons", force: :cascade do |t|
-    t.integer "superior_movie_id"
-    t.integer "inferior_movie_id"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_10_122217) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year"
