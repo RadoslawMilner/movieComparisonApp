@@ -8,5 +8,4 @@ class Movie < ApplicationRecord
   
   has_many :fans, through: :superior_comparisons, source: :user
   has_many :haters, through: :inferior_comparisons, source: :user
-
 end

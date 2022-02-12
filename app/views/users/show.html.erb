@@ -1,0 +1,20 @@
+<h1><%= @user.name %></h1>
+<small><%= link_to "Back to all Users", users_path %></small>
+<h2>Movie Comparisons</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Superior Movie</th>
+      <th>Inferior Movie</th>
+    </th>
+  </thead>
+  <tbody>
+    <% @user.comparisons.each do |comparison| %>
+      <tr>
+        <td><%= comparison.superior_movie.title %></td>
+        <td><%= comparison.inferior_movie.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
