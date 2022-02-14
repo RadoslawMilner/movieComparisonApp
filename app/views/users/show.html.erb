@@ -1,5 +1,7 @@
 <h1><%= @user.name %></h1>
+
 <small><%= link_to "Back to all Users", users_path %></small>
+
 <h2>Movie Comparisons</h2>
 
 <table>
@@ -18,3 +20,17 @@
     <% end %>
   </tbody>
 </table>
+
+<h2>Create new comparisons</h2>
+
+<%= form_for @comparison do |f| %>
+  <input type="hidden" name="user[id]" value="<%= @user.id %>">
+
+  <%= f.label :superior_movie_id, "Superior movie" %>
+  <%= f.collection_select :superior_movie_id, @movies, :id, :title %><br>
+
+  <%= f.label :inferior_movie_id, "Inferior movie" %>
+  <%= f.collection_select :inferior_movie_id, @movies, :id, :title %><br>
+
+  <%= f.submit %>
+<% end %>
